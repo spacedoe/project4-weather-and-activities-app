@@ -3,6 +3,8 @@ import "./App.css";
 import Form from "./components/Form/Form";
 import { uid } from "uid";
 import "./components/Form/Form.css";
+import "./components/List/List.css";
+import "./components/Weather/Weather.css";
 import List from "./components/List/List";
 import useLocalStorageState from "use-local-storage-state";
 import Weather from "./components/Weather/Weather";
@@ -39,8 +41,8 @@ function App() {
 
   console.log("Weather: ", weather);
 
-  const isGoodWeather = true
-  // const isGoodWeather = weather?.isGoodWeather;
+ 
+  const isGoodWeather = weather?.isGoodWeather;
 
   const goodWeatherActivities = activities.filter(
     (activity) => activity.isForGoodWeather === true
@@ -61,17 +63,15 @@ function App() {
 
   return (
     <>
-      <div>
-        <Weather weather={weather} />
-        <List
-          isGoodWeather={isGoodWeather}
-          activities={
-            isGoodWeather ? goodWeatherActivities : badWeatherActivities
-          }
-          onDeleteActivity={handleDeleteActivity}
-        />
-        <Form onAddActivity={handleAddActivity} />
-      </div>
+      <Weather weather={weather} />
+      <List
+        isGoodWeather={isGoodWeather}
+        activities={
+          isGoodWeather ? goodWeatherActivities : badWeatherActivities
+        }
+        onDeleteActivity={handleDeleteActivity}
+      />
+      <Form onAddActivity={handleAddActivity} />
     </>
   );
 }

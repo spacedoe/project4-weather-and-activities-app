@@ -1,0 +1,10 @@
+.weather__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+h1 {
+    font-size: small;
+
+}

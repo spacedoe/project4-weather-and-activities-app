@@ -30,7 +30,7 @@ export default function Form({ onAddActivity }) {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <h1 className="form__title">Add new activity:</h1>
+      <h2 className="form__title">Add new activity:</h2>
 
       <div className="input__section">
         <label className="input__label" htmlFor="name">
@@ -41,6 +41,7 @@ export default function Form({ onAddActivity }) {
           type="text"
           id="name"
           name="name"
+          required
         ></input>
       </div>
 
@@ -55,7 +56,7 @@ export default function Form({ onAddActivity }) {
         ></input>
       </div>
 
-      <button type="submit">Submit</button>
+      <button className="button-submit" type="submit">Submit</button>
     </form>
   );
 }

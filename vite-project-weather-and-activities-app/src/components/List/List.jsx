@@ -30,14 +30,14 @@ export default function List({
 
       <ul className="list__section">
         {activities.map((activity) => (
-          <li key={activity.id}>
+          <li className="list__item" key={activity.id}>
             {activity.name}
             <button
               onClick={() => onDeleteActivity(activity.id)}
               type= "button"
-              className="list__delete-button"
+              className="list__button"
             >
-              x
+              ❌
             </button>
           </li>
         ))}

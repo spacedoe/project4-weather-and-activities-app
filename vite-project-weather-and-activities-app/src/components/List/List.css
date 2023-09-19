@@ -1,0 +1,44 @@
+.list__section {
+  list-style: "";
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list__item {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  margin-right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 10px;
+  box-shadow: 0px 2px 1px #23529e;
+  margin-top: 20px;
+  font-weight: 500;
+  color: #23529E;
+  
+}
+
+
+.list__item:hover,
+.list__item:focus {
+  transform: translateY(-0.25em);
+}
+
+
+.list__button {
+  display: flex;
+  align-self: flex-end;
+  padding: 10px 10px;
+  background-color: #f5f5f5;
+  border: none;
+}
+
+.list__button:hover {
+  cursor: pointer;
+}
+
+.list__button:active {
+    transform: translateY(4px);
+  }
