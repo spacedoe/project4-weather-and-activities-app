@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 
 List.propTypes = {
   activities: PropTypes.arrayOf(PropTypes.object),
+  isGoodWeather: PropTypes.bool,
 };
 
 // "activities": [
@@ -12,12 +14,20 @@ List.propTypes = {
 //   },
 // ]
 
-export default function List({ activities }) {
+export default function List({ activities, isGoodWeather }) {
   return (
-    <ul className="list__section">
-      {activities.map((activity) => (
-        <li key={activity.id}>{activity.name}</li>
-      ))}
-    </ul>
+    <>
+      <h2>
+        {isGoodWeather === true
+          ? "The weather is awesome! Go outside and:"
+          : "Bad weather outside! Here's what you can do now:"}
+      </h2>
+
+      <ul className="list__section">
+        {activities.map((activity) => (
+          <li key={activity.id}>{activity.name}</li>
+        ))}
+      </ul>
+    </>
   );
 }
