@@ -14,7 +14,12 @@ List.propTypes = {
 //   },
 // ]
 
-export default function List({ activities, isGoodWeather }) {
+export default function List({
+  activities,
+  isGoodWeather,
+  onDeleteActivity,
+}) {
+ 
   return (
     <>
       <h2>
@@ -25,7 +30,16 @@ export default function List({ activities, isGoodWeather }) {
 
       <ul className="list__section">
         {activities.map((activity) => (
-          <li key={activity.id}>{activity.name}</li>
+          <li key={activity.id}>
+            {activity.name}
+            <button
+              onClick={() => onDeleteActivity(activity.id)}
+              type= "button"
+              className="list__delete-button"
+            >
+              x
+            </button>
+          </li>
         ))}
       </ul>
     </>
