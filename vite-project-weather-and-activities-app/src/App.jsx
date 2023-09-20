@@ -15,7 +15,6 @@ function App() {
   });
   const [weather, setWeather] = useState();
 
-
   const weatherApiUrl = "https://example-apis.vercel.app/api/weather";
 
   useEffect(() => {
@@ -41,7 +40,6 @@ function App() {
 
   console.log("Weather: ", weather);
 
- 
   const isGoodWeather = weather?.isGoodWeather;
 
   const goodWeatherActivities = activities.filter(
@@ -64,14 +62,19 @@ function App() {
   return (
     <>
       <Weather weather={weather} />
-      <List
-        isGoodWeather={isGoodWeather}
-        activities={
-          isGoodWeather ? goodWeatherActivities : badWeatherActivities
-        }
-        onDeleteActivity={handleDeleteActivity}
-      />
-      <Form onAddActivity={handleAddActivity} />
+      {/* only render List component if the weather is defined */}
+      {weather && (
+        <>
+          <List
+            isGoodWeather={isGoodWeather}
+            activities={
+              isGoodWeather ? goodWeatherActivities : badWeatherActivities
+            }
+            onDeleteActivity={handleDeleteActivity}
+          />
+          <Form onAddActivity={handleAddActivity} />
+        </>
+      )}
     </>
   );
 }

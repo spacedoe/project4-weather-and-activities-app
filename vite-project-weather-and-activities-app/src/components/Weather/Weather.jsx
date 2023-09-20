@@ -6,11 +6,12 @@
 export default function Weather({ weather }) {
   return (
     <div className="weather__section">
-      {weather === undefined && (<h1> Checking the weather...</h1>)}
-      {weather !== undefined && (
+      {/* if weather is falsy (undefined, null, etc.) */}
+      {!weather && <h1> Checking the weather...</h1>}
+      {weather && (
         <>
           <h1>{weather.condition}</h1>
-          <h1>{`${weather.temperature} ℃`}</h1>
+          <h1>{`${weather.temperature} °C`}</h1>
         </>
       )}
     </div>
