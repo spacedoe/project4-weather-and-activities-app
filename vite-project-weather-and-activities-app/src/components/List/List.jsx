@@ -14,19 +14,20 @@ List.propTypes = {
 //   },
 // ]
 
-export default function List({
-  activities,
-  isGoodWeather,
-  onDeleteActivity,
-}) {
- 
+export default function List({ activities, isGoodWeather, onDeleteActivity }) {
   return (
     <>
-      <h2>
-        {isGoodWeather === true
-          ? "The weather is awesome! Go outside and:"
-          : "Bad weather outside! Here's what you can do now:"}
-      </h2>
+      {isGoodWeather === true ? (
+        <h2>
+          Awesome weather! <br />
+          Go outside and:
+        </h2>
+      ) : (
+        <h2>
+          Bad weather! <br />
+          Stay inside and:
+        </h2>
+      )}
 
       <ul className="list__section">
         {activities.map((activity) => (
@@ -34,7 +35,7 @@ export default function List({
             {activity.name}
             <button
               onClick={() => onDeleteActivity(activity.id)}
-              type= "button"
+              type="button"
               className="list__button"
             >
               ❌

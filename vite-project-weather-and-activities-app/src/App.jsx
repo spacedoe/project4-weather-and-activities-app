@@ -15,7 +15,7 @@ function App() {
   });
   const [weather, setWeather] = useState();
 
-  // weather = "Just check outside! 👀"
+
   const weatherApiUrl = "https://example-apis.vercel.app/api/weather";
 
   useEffect(() => {
